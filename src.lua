@@ -7,7 +7,7 @@ local statsService = game:GetService("Stats")
 local player = players.LocalPlayer
 
 local Bleachhack = {}; Bleachhack.__index = Bleachhack
-local objects = game.ReplicatedStorage.Bleachhack
+local objects = game:GetObjects("rbxassetid://17761019711")[1]
 
 local IS_STUDIO = runService:IsStudio()
 local indent = " "
@@ -310,7 +310,7 @@ function Bleachhack:Create()
 	end
 	
 	userInputService.InputBegan:Connect(function(input)
-		if input.KeyCode == Enum.KeyCode.RightShift then
+		if input.KeyCode == Enum.KeyCode.LeftAlt then
 			toggleModules()
 		end
 	end)
