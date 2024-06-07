@@ -7,7 +7,7 @@ local statsService = game:GetService("Stats")
 local player = players.LocalPlayer
 
 local Bleachhack = {}; Bleachhack.__index = Bleachhack
-local objects = game:GetObjects("rbxassetid://17761019711")[1]:Clone()
+local objects = game.ReplicatedStorage.Bleachhack
 
 local IS_STUDIO = runService:IsStudio()
 local indent = " "
@@ -321,7 +321,6 @@ function Bleachhack:Create()
 		local chroma = getRainbowColor()
 		local pingColor = valueToColor(ping * 500, 200)
 		local fpsColor = valueToColor2(fps, 60)
-		ping = Random.new():NextNumber(0.01, 0.35)
 		self.UI.ModulesList.Bar.BackgroundColor3 = chroma
 		self.UI.Server.Ping.Text = '<stroke thickness="1"><font color="#dbd9d9">Ping: </font><font color="rgb('..pingColor[1]..","..pingColor[2]..","..pingColor[3]..')">'..math.round(ping * 500).."</font></stroke>"
 		self.UI.Server.FPS.Text = '<stroke thickness="1"><font color="#dbd9d9">FPS: </font><font color="rgb('..fpsColor[1]..","..fpsColor[2]..","..fpsColor[3]..')">'..fps.."</font></stroke>"
